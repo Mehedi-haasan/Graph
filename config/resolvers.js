@@ -25,5 +25,10 @@ export const resolvers = {
         review(parent, agrs){
             return db.reviews.filter((re)=>re.gameId === parent.id)
         }
+    },
+    Mutation:{
+        deleteGame(parent, args){
+           return db.games = db.games.filter((ga)=>ga.id !== args.id)
+        }
     }
 };
